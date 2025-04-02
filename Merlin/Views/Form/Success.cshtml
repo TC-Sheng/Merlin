@@ -4,6 +4,8 @@
 <html>
 <head>
     <title>Form Submission Success</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -23,6 +25,13 @@
             border: 1px solid #ddd;
             border-radius: 5px;
         }
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -36,6 +45,6 @@
         <p><strong>Name (姓名):</strong> @Model.Name</p>
         <p><strong>Gender (性別):</strong> @Model.Gender</p>
     </div>
-    <a href="@Url.Action("Index")" style="color: #4CAF50;">Back to Form (返回表單)</a>
+    <a href="/Form">Back to Form (返回表單)</a>
 </body>
 </html> 

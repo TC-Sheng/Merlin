@@ -4,6 +4,8 @@
 <html>
 <head>
     <title>User Information Form</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -37,17 +39,17 @@
 </head>
 <body>
     <h1>User Information Form</h1>
-    <form asp-action="Submit" method="post">
+    <form method="post" action="/Form/Submit">
         <div class="form-group">
             <label>
                 Name (姓名)
-                <input asp-for="Name" required />
+                <input type="text" name="Name" required />
             </label>
         </div>
         <div class="form-group">
             <label>
                 Gender (性別)
-                <select asp-for="Gender" required>
+                <select name="Gender" required>
                     <option value="">Please select (請選擇)</option>
                     <option value="Male">Male (男)</option>
                     <option value="Female">Female (女)</option>

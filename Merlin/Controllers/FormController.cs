@@ -5,7 +5,6 @@ namespace Merlin.Controllers
 {
     public class FormController : Controller
     {
-        [HttpGet]
         public IActionResult Index()
         {
             return View();
