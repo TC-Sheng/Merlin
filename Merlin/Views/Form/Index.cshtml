@@ -14,16 +14,29 @@
             padding: 20px;
         }
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
-        label {
+        .field-label {
             display: block;
             margin-bottom: 5px;
+            font-weight: bold;
         }
-        input, select {
+        .english-label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+            font-size: 0.9em;
+        }
+        input, select, textarea {
             width: 100%;
             padding: 8px;
             margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        textarea {
+            height: 100px;
+            resize: vertical;
         }
         button {
             background-color: #4CAF50;
@@ -31,9 +44,14 @@
             padding: 10px 20px;
             border: none;
             cursor: pointer;
+            border-radius: 4px;
         }
         button:hover {
             background-color: #45a049;
+        }
+        .required::after {
+            content: " *";
+            color: red;
         }
     </style>
 </head>
@@ -41,21 +59,157 @@
     <h1>User Information Form</h1>
     <form method="post" action="/Form/Submit">
         <div class="form-group">
-            <label>
-                Name (姓名)
-                <input type="text" name="Name" required />
-            </label>
+            <label class="field-label required">中文姓名</label>
+            <label class="english-label">Name</label>
+            <input type="text" name="Name" required placeholder="例如：吳志明" />
         </div>
+
         <div class="form-group">
-            <label>
-                Gender (性別)
-                <select name="Gender" required>
-                    <option value="">Please select (請選擇)</option>
-                    <option value="Male">Male (男)</option>
-                    <option value="Female">Female (女)</option>
-                </select>
-            </label>
+            <label class="field-label">英文姓名</label>
+            <label class="english-label">English Name</label>
+            <input type="text" name="EnglishName" placeholder="例如：Michelle Chang" />
         </div>
+
+        <div class="form-group">
+            <label class="field-label required">您的職稱?</label>
+            <label class="english-label">Job Title</label>
+            <input type="text" name="JobTitle" required />
+        </div>
+
+        <div class="form-group">
+            <label class="field-label required">到職日期</label>
+            <label class="english-label">Date of Employment</label>
+            <input type="date" name="DateOfEmployment" required />
+        </div>
+
+        <div class="form-group">
+            <label class="field-label required">性別</label>
+            <label class="english-label">Gender</label>
+            <select name="Gender" required>
+                <option value="">請選擇</option>
+                <option value="Male">男</option>
+                <option value="Female">女</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="field-label required">生日</label>
+            <label class="english-label">Date of Birth</label>
+            <input type="date" name="DateOfBirth" required />
+        </div>
+
+        <div class="form-group">
+            <label class="field-label required">血型</label>
+            <label class="english-label">Blood Type</label>
+            <select name="BloodType" required>
+                <option value="">請選擇</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="O">O</option>
+                <option value="AB">AB</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="field-label required">婚姻狀態</label>
+            <label class="english-label">Marital Status</label>
+            <select name="MaritalStatus" required>
+                <option value="">請選擇</option>
+                <option value="Single">單身</option>
+                <option value="Married">已婚</option>
+                <option value="Divorced">離婚</option>
+                <option value="Widowed">喪偶</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="field-label required">聯絡電話（手機）</label>
+            <label class="english-label">Contact number (mobile phone)</label>
+            <input type="tel" name="MobilePhone" required />
+        </div>
+
+        <div class="form-group">
+            <label class="field-label">聯絡電話（家用，若無則填無）</label>
+            <label class="english-label">Contact number (for home use, if not available, fill in none)</label>
+            <input type="tel" name="HomePhone" />
+        </div>
+
+        <div class="form-group">
+            <label class="field-label required">個人電子郵件</label>
+            <label class="english-label">Personal Email</label>
+            <input type="email" name="Email" required />
+        </div>
+
+        <div class="form-group">
+            <label class="field-label required">戶籍地址</label>
+            <label class="english-label">Household address</label>
+            <input type="text" name="HouseholdAddress" required />
+        </div>
+
+        <div class="form-group">
+            <label class="field-label required">通訊地址</label>
+            <label class="english-label">Correspondence address</label>
+            <input type="text" name="CorrespondenceAddress" required />
+        </div>
+
+        <div class="form-group">
+            <label class="field-label required">玉山銀行薪轉帳戶(需為本人帳戶)</label>
+            <label class="english-label">E.SUN BANK, ESB Payroll Account (Must be your own account)</label>
+            <input type="text" name="BankAccount" required />
+        </div>
+
+        <div class="form-group">
+            <label class="field-label required">分行代碼</label>
+            <label class="english-label">E.SUN BANK, ESB branch code</label>
+            <input type="text" name="BankBranchCode" required />
+        </div>
+
+        <div class="form-group">
+            <label class="field-label required">銀行帳號 (帳號共13碼)</label>
+            <label class="english-label">E.SUN BANK, ESB Payroll Account Number (13 digits)</label>
+            <input type="text" name="BankAccountNumber" required pattern="[0-9]{13}" maxlength="13" />
+        </div>
+
+        <div class="form-group">
+            <label class="field-label required">緊急聯絡人姓名</label>
+            <label class="english-label">Emergency Contact Name</label>
+            <input type="text" name="EmergencyContactName" required />
+        </div>
+
+        <div class="form-group">
+            <label class="field-label required">緊急連絡人電話</label>
+            <label class="english-label">Emergency Contact Phone Number</label>
+            <input type="tel" name="EmergencyContactPhone" required />
+        </div>
+
+        <div class="form-group">
+            <label class="field-label required">與緊急聯絡人關係</label>
+            <label class="english-label">Relationship with Emergency Contact</label>
+            <input type="text" name="EmergencyContactRelationship" required />
+        </div>
+
+        <div class="form-group">
+            <label class="field-label required">最高學歷（請詳細填寫校名、系所、學位）</label>
+            <label class="english-label">Highest Education Level (Please specify the school name, department, and degree)</label>
+            <textarea name="HighestEducation" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label class="field-label required">最高學歷（請勾選畢業或肄業）</label>
+            <label class="english-label">Highest Education Level (Please select : Graduated or Incomplete)</label>
+            <select name="EducationStatus" required>
+                <option value="">請選擇</option>
+                <option value="Graduated">畢業</option>
+                <option value="Incomplete">肄業</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="field-label required">最近一次工作經驗（請詳細填寫公司名稱、職稱）</label>
+            <label class="english-label">Most Recent Work Experience (Please provide the company name and job title)</label>
+            <textarea name="RecentWorkExperience" required></textarea>
+        </div>
+
         <button type="submit">Submit (提交)</button>
     </form>
 </body>
