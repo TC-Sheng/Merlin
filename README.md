@@ -11,9 +11,9 @@ A web-based talent training system built with .NET Core 8.0 and C#.
      - Required field
      - Example: 吳志明
   2. 英文姓名 / English Name
-     - Optional field
+     - Required field
      - Example: Michelle Chang
-  3. 您的職稱? / Job Title
+  3. 您的職稱 / Job Title
      - Required field
   4. 到職日期 / Date of Employment
      - Required field
@@ -44,8 +44,7 @@ A web-based talent training system built with .NET Core 8.0 and C#.
   13. 通訊地址 / Correspondence address
       - Required field
   14. 玉山銀行薪轉帳戶 / E.SUN BANK, ESB Payroll Account
-      - Required field
-      - Must be user's own account
+      - No input required
   15. 分行代碼 / E.SUN BANK, ESB branch code
       - Required field
   16. 銀行帳號 / E.SUN BANK, ESB Payroll Account Number

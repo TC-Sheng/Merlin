@@ -15,7 +15,6 @@ namespace Merlin.Models
         public string Email { get; set; } = string.Empty;
         public string HouseholdAddress { get; set; } = string.Empty;
         public string CorrespondenceAddress { get; set; } = string.Empty;
-        public string BankAccount { get; set; } = string.Empty;
         public string BankBranchCode { get; set; } = string.Empty;
         public string BankAccountNumber { get; set; } = string.Empty;
         public string EmergencyContactName { get; set; } = string.Empty;
