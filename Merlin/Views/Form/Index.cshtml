@@ -1,0 +1,60 @@
+@model Merlin.Models.UserForm
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Information Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>User Information Form</h1>
+    <form asp-action="Submit" method="post">
+        <div class="form-group">
+            <label>
+                Name (姓名)
+                <input asp-for="Name" required />
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                Gender (性別)
+                <select asp-for="Gender" required>
+                    <option value="">Please select (請選擇)</option>
+                    <option value="Male">Male (男)</option>
+                    <option value="Female">Female (女)</option>
+                </select>
+            </label>
+        </div>
+        <button type="submit">Submit (提交)</button>
+    </form>
+</body>
+</html> 

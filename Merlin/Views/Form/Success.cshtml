@@ -1,0 +1,41 @@
+@model Merlin.Models.UserForm
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Submission Success</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .success-message {
+            color: #4CAF50;
+            margin: 20px 0;
+        }
+        .form-data {
+            text-align: left;
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Form Submission Success</h1>
+    <div class="success-message">
+        <h2>Thank you for submitting your information!</h2>
+        <h2>感謝您提交信息！</h2>
+    </div>
+    <div class="form-data">
+        <h3>Submitted Information (提交的信息):</h3>
+        <p><strong>Name (姓名):</strong> @Model.Name</p>
+        <p><strong>Gender (性別):</strong> @Model.Gender</p>
+    </div>
+    <a href="@Url.Action("Index")" style="color: #4CAF50;">Back to Form (返回表單)</a>
+</body>
+</html> 
